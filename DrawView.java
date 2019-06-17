@@ -1,5 +1,3 @@
-package com.example.hongseonggi.chatting_client;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -100,9 +98,6 @@ public class DrawView extends View implements View.OnTouchListener{
 
         Toast.makeText(getContext(), "save버튼 호출", Toast.LENGTH_SHORT).show();
 
-       // @SuppressLint("SimpleDateFormat")SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-        //Date currentTime = new Date();
-        //String dateString = formatter.format(currentTime);
         String filename = "ctos_image.png";
         try{
             File file = new File(Environment.getExternalStorageDirectory(),filename);
