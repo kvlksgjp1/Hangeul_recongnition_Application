@@ -150,5 +150,46 @@ public class Chatting extends AppCompatActivity {
 
     }
 
+    public class ChattingAdapter extends BaseAdapter {
+        ArrayList<Useritem> items = new ArrayList<Useritem>();
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public void addItem(Useritem item) {
+            items.add(item);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            UseritemView view =null;
+            if(convertView == null)
+            {
+                view = new UseritemView(getApplicationContext());
+            }else{
+                view = (UseritemView)convertView;
+            }
+            Useritem item = items.get(position);
+
+            view.setImage(item.getResId());
+            view.setName(item.getName());
+            view.setContents(item.getContents());
+            view.setUri(item.getUri());
+            return view;
+        }
+    }
+
 }
 
